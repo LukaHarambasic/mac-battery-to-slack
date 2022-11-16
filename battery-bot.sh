@@ -3,7 +3,7 @@
 MESSAGES=("Pleeeassseeeee charge me!" "You know what I'm going to tell you..." "Come on, again?" "You are looking sharp today, but have you thought about charging me?" "Want to embarrass yourself during a meeting again?" "Should Luka get you a charger? Again?" " I won't say anything.")
 BATTERY_LEVEL=$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)
 
-if (($BATTERY_LEVEL < 65))
+if (($BATTERY_LEVEL < 25))
 then
     MESSAGE_MAIN=${MESSAGES[RANDOM%${#MESSAGES[@]}]}
     MESSAGE_LEVEL=":low_battery: ${BATTERY_LEVEL}%"
